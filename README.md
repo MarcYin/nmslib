@@ -8,14 +8,9 @@ This project works with Python on version 2.7+ and 3.5+, and on
 Linux, OSX and the Windows operating systems. To install:
 
 ```
-pip install nmslib
+pip install https://github.com/MarcYin/nmslib/archive/master.zip
 ```
 
-You may need to install Python dev-files. On Ubuntu, you can do it as follows:
-
-```
-sudo apt-get install python3-dev
-```
 
 Building on Windows requires Visual Studio 2015, see this [project for more
 information](https://github.com/pybind/python_example#installation).
@@ -43,6 +38,7 @@ ids, distances = index.knnQuery(data[0], k=10)
 # get all nearest neighbours for all the datapoint
 # using a pool of 4 threads to compute
 neighbours = index.knnQueryBatch(data, k=10, num_threads=4)
+neighbours = index.knnQueryBatch(data, k=10, num_threads=4, index_only=True) # only index will return
 ```
 
 #### Basic tuning guidelines
